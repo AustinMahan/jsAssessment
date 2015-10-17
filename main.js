@@ -164,17 +164,113 @@ if(divideByThree % 3 == 0){
 // 34. Write a function that accepts the following array and separates the people into men and women.
 //     HINT: The men are even and the women are odd.
        battingLineUp= ["Henry", "Shirley", "Mark", "Tina", "Max", "Sara", "Eric", "Lisa", "Ralph", "Connie", "Drew"]
+var mens = [];
+var womens = [];
+
+       for(i=0; i<battingLineUp.length; i++){
+         if(i % 2 == 0){
+           mens.push(battingLineUp[i])
+         } else{
+           womens.push(battingLineUp[i])
+         }
+       }
+       console.log(mens);
+       console.log(womens);
 // 35. Prompt a user to enter their phone number. Write a function that outputs their phone number in a pretty format like:
 //     (555) 883-3985
+    // var phone = prompt('enter your phone number')
+    // var prt1 = phone.substring(0,3);
+    // var prt2 = phone.substring(3,6);
+    // var prt3 = phone.substring(6,10);
+    // if(phone.length != 10){
+    //   alert('Not a phone number')
+    // }
+    // console.log('(' + prt1 + ") " + prt2 + '-' + prt3);
 //     Alert the user if they have entered anything except a 10 digit number.
 // 36. Write a helpufl tipping function that accepts two parameters, the bill amount and service score based on a scale of 1-10.
 //     The output should be the bill, the tip, and the total amount.
 //     Service score 1-3 denotes a 10% tip. 4-6 = 15%, 7-9 = 20%, 10 = 50%.
+
+// function tip(x,y){
+//   if(1<=y<=3){
+//     var theTip = x * .1
+//   }else if(4<=y<=6){
+//     var theTip = x * .15
+//   }else if(7 <= y <= 9){
+//     var theTip = x * .2
+//   }
+//   var total1 = x + theTip
+//   console.log('The bill amount was ' + x + ' so the tip is ' + theTip + ' so your total is ' + total1);
+// }
+// tip(22, 5)
+
+function tip(x,y){
+  switch(true){
+    case "1<=y && y<=3":
+      var theTip = x * .1
+      break;
+    case 4<=y<=6:
+      var theTip = x * .15
+      break;
+    case 7 <= y <= 9:
+      var theTip = x * .2
+      break;
+    case y = 10:
+      var theTip = x * .5
+      break;
+  }
+  var total1 = x + theTip
+  console.log('The bill amount was ' + x + ' so the tip is ' + theTip + ' so your total is ' + total1);
+}
+tip(36,8)
+
 // 37. Create a function that determines whether a parameter is a number or not.
 //     Iterate over the elements in the following array to determine if each is a number.
        arrayOfSchtuff = ["four", 55, {myDog: "Scranton"}, "fifty-one", 21, 398577729, "3,333"]
+    // function findNum(x){
+    //   for(i=0; i<x.length; i++){
+    //     if(x[i] = /[1234567890]/g){
+    //       console.log(x[i]);
+    //     }
+    //   }
+    // }
+// findNum(arrayOfSchtuff)
 // 38. Use a function to ask a user for a US Dollar amount and converts it to Canadian Dollars.
+    // var input3 = parseInt(prompt("Convert US to Canadian"))
+    // function convert(input){
+    //   console.log(input * 1.285364);
+    // }
+    // convert(input3)
 // 39. Add the option of converting to Euros. First ask the user which currency they want the conversion for, then ask for the dollar amount.
+// function convert2(x){
+//   var option = prompt('us to euro  or  us to canadian')
+//   if(option = 'us to euro'){
+//     var input4 = parseInt(prompt('how much to convert'))
+//     console.log(input4 * .88);
+//   } else{
+//     var input5 = parseInt(prompt('how much to convert!'))
+//     console.log(input5 * 1.285364);
+//   }
+// }
+// convert2()
+// var option = prompt('us to euro  or  us to canadian')
+// function convert2(option){
+//
+//   switch(true){
+//     case "us to euro":
+//       var input4 = parseInt(prompt('how much to convert'))
+//       console.log(input4 * .88);
+//       break;
+//     case "us to canadian":
+//       var input5 = parseInt(prompt('how much to convert!'))
+//       console.log(input5 * 1.285364);
+//       break;
+//     default:
+//     console.log('enter a valid');
+//     break;
+//   }
+// }
+// convert2(option)
 // 40. Write a function that returns an object of duplicate letters in an string.
 //     "Baby Aaron" should return {"b":2, "a":3}
 // BONUS: Write a function named pluralize that takes 2 arguments, a noun and a number. It returns the number and pluralized form, like "5 cats" or "1 dog".
